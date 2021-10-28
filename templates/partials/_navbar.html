@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="assets/img/logo.png" class="logo" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav">
+        <li 
+        {% if '/' == request.path %}
+        class="nav-item active mr-4"
+        {% else %}
+        class="nav-item mr-4"
+        {% endif %}
+        >
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </li>
+        <li 
+        {% if '/about' in request.path %}
+        class="nav-item active mr-4"
+        {% else %}
+        class="nav-item mr-4"
+        {% endif %}
+        >
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li 
+        {% if '/parts' in request.path %}
+        class="nav-item active mr-4"
+        {% else %}
+        class="nav-item mr-4"
+        {% endif %}
+        >
+            <a class="nav-link" href="{% url 'parts' %}">Parts</a>
+        </li>
+        <li
+        {% if '/shops' in request.path %}
+        class="nav-item active mr-4"
+        {% else %}
+        class="nav-item mr-4"
+        {% endif %}
+        >
+            <a class="nav-link" href="{% url 'shops' %}">Shops</a>
+        </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+            <li 
+            {% if 'dashboard' in request.path %}
+            class="nav-item active mr-4"
+            {% else %}
+            class="nav-item mr-4"
+            {% endif %}>
+                <a class="nav-link" href="{% url 'dashboard' %}">{{ user.username }}</a>
+            </li>
+            <li class="nav-item mr-4">
+                <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                    <i class="fas fa-sign-out-alt">ログアウト</i>
+                </a>
+                <form action="{% url 'logout' %}" method="POST" id="logout">
+                    {% csrf_token %}
+                    <input type="hidden">
+                </form>
+            </li>
+        {% else %}
+            <li 
+            {% if '/users' in request.path %}
+            class="nav-item active mr-5"
+            {% else %}
+            class="nav-item mr-5"
+            {% endif %}>
+                <a class="nav-link" href="{% url 'users' %}">
+                <i class="fas fa-user-plus"></i>新規登録</a>
+            </li>
+            <li
+            {% if '/login' in request.path %}
+            class="nav-item active mr-5"
+            {% else %}
+            class="nav-item mr-5"
+            {% endif %}>
+                <a class="nav-link" href="{% url 'login' %}">
+                <i class="fas fa-sign-in-alt"></i>ログイン</a>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
+    </div>
+</nav>

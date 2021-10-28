@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% load humanize %}
+{% block title %} | vehicles{% endblock %}
+
+{% block content %}
+<div id="vehicle_list">
+        <ul id="vehicles" class="card transition">
+                <li class="image"><img src="../media/{{vehicle.image}}"></li>
+                <li class="name transition">{{ vehicle.model_num }} - {{ vehicle.name }}</li>
+                <li class="v_values maker">{{ vehicle.maker }}</li>
+                <li class="v_values region">{{ vehicle.region }}</li>
+                <li class="v_values transmission">{{ vehicle.transmission }}</li>
+                <li class="v_values body_type">{{ vehicle.body_type }}</li>
+                <li class="v_values price">{{ vehicle.price | intcomma }}円</li>
+                <li class="v_values car_age">{{ vehicle.car_age }}</li>
+                <li class="v_values repair_record">{{ vehicle.repair_record }}</li>
+                <li class="v_values frame_num">{{ vehicle.frame_num | default:'情報なし'}}</li>
+                <li class="v_values vin">{{ vehicle.vin | default:'情報なし'}}</li>
+                <li class="v_values status">{{ vehicle.status }}</li>
+        </ul>
+</div>
+
+{% endblock %}

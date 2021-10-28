@@ -1,0 +1,406 @@
+h3.section_titles_top {
+  display: block;
+  font-size: 1.3rem;
+  color: #17709B;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  margin-left: 0.7rem;
+  /* text-align: center; */
+}
+
+h3.section_titles {
+  display: block;
+  font-size: 1.3rem;
+  color: #17709B;
+}
+
+div#part_list {
+  display: flex;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+ul#parts {
+  width: 350px;
+  height: 500px;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+
+li.v_values {
+  width: 150px;
+  padding: 0.3rem;
+  padding-left: 1.5rem;
+}
+
+li.image {
+  overflow: hidden;
+  width: 350px;
+  height: 200px;
+  position: relative;
+}
+
+li.image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+p.logging_menu a.bold_font {
+  font-weight: bold;
+}
+
+div#maker_list form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  margin-top: 1rem;
+}
+
+input.maker__input {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+label.maker__label {
+  width: 30%;
+  height: 30px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #17709B;
+  margin: 5px;
+  text-align: center;
+  line-height: 30px;
+  padding: 0.5rem;
+  border: solid 1px #707070;
+  border-radius: 8px;
+  transition: all .2s;
+}
+
+input.maker__input:checked+label.maker__label {
+  background: #17709b;
+  color: #FDE560;
+  text-shadow: 0 0 1px rgba(0, 0, 0, .7);
+}
+
+input.maker__input:focus+.maker__label {
+  outline-color: #4D90FE;
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}
+
+section.detail_filtering {
+  display: flex;
+}
+
+div.detail_settings {
+  width: 35%;
+  height: 60px;
+  margin-top: 3rem;
+  padding: 0.5rem;
+  transition: all .2s;
+}
+
+div.detail_settings h3,
+div.detail_settings form {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+div.detail_settings h3 {
+  margin-left: 5px;
+}
+
+.detail_settings select {
+  background-color: #fff;
+  width: 100%;
+  height: 48px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #17709B;
+  border: solid 1px #707070;
+  text-align-last: center;
+  margin-top: 1rem;
+  border-radius: 8px;
+  transition: all .2s;
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+.detail_settings select option {
+  padding: 30px;
+}
+
+.right {
+  margin-left: 5px;
+}
+
+.left {
+  margin-left: -3px;
+}
+
+div.search_section {
+  width: 50%;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding: 0.5rem;
+  transition: all .2s;
+}
+
+section.address_filtering {
+  margin-top: 3rem;
+}
+
+section.search_btn_section {
+  display: flex;
+}
+
+button.search_btn {
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #EE345F;
+  color: #fff;
+  margin: 5px;
+  text-align: center;
+  line-height: 30px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all .2s;
+}
+
+/* ------------------------------------ */
+/* 検索条件カードCSS
+/* ------------------------------------ */
+
+section.detail_filtering {
+  display: flex;
+}
+
+/* ------------------------------------ */
+/* フッターCSS
+/* ------------------------------------ */
+footer#footer {
+  background-color: #17709B;
+  color: #fff;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  margin-top: 3rem;
+  padding: 0.5rem;
+  line-height: 35px;
+}
+
+footer#footer small {
+  font-size: 0.7rem;
+}
+
+/* ------------------------------------ */
+/* コンテンツCSS
+/* ------------------------------------ */
+p.stock_info {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+p.stock_info span.font_color {
+  color: #17709b;
+}
+
+/* ------------------------------------ */
+/* 検索ボックスCSS
+/* ------------------------------------ */
+.form_container {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100px;
+}
+
+.form_container .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: #17709b;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+
+.form_container .search:hover {
+  cursor: pointer;
+}
+
+.form_container .search::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right: 0;
+  bottom: 0;
+  left: 22px;
+  width: 12px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+
+.form_container .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.5s;
+}
+
+.form_container input {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: #17709b;
+  color: white;
+  text-shadow: 0 0 10px #17709b;
+  padding: 0 80px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 #17709b, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+
+.form_container input:hover {
+  cursor: pointer;
+}
+
+.form_container input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+
+.form_container input:focus~.search {
+  right: -250px;
+  background: #151515;
+  z-index: 6;
+}
+
+.form_container input:focus~.search::before {
+  top: 0;
+  left: 0;
+  width: 25px;
+}
+
+.form_container input:focus~.search::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  border: none;
+  background: white;
+  border-radius: 0%;
+  transform: rotate(-45deg);
+}
+
+.form_container input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------ */
+/* カードCSS
+/* ------------------------------------ */
+
+.transition {
+  transition: .3s cubic-bezier(.3, 0, 0, 1.3)
+}
+
+.card {
+  background-color: #fff;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background-size: cover;
+  border-radius: 2%;
+}
+
+li.name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #17709b;
+  text-align: center;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+li.name small {
+  font-weight: normal;
+  font-size: 65%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 8%;
+}
+
+.cta {
+  color: #fff;
+  border: 2px solid #17709b;
+  background-color: #17709b;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}

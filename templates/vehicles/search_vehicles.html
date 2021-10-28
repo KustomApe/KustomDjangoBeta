@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+
+{% load humanize %}
+
+{% block content %}
+
+
+<div class="container"></div>
+<ul>
+    <li><a href="{% url 'index' %}">一覧ページに戻る</a></li>
+    <li class="breadcrumb-item active">検索結果</li>
+</ul>
+</div>
+<!-- Listings -->
+<div class="container">
+    <div id="vehicle_list">
+    {% if page_obj %}
+        {% for vehicle in page_obj %}
+        <ul id="vehicles" class="card transition">
+            <li class="image"><img src="../media/{{vehicle.image}}"></li>
+            <li class="name transition">{{ vehicle.model_num }} - {{ vehicle.name }}</li>
+            <li class="v_values maker">{{ vehicle.maker }}</li>
+            <li class="v_values region">{{ vehicle.region }}</li>
+            <li class="v_values transmission">{{ vehicle.transmission }}</li>
+            <li class="v_values body_type">{{ vehicle.body_type }}</li>
+            <li class="v_values price">{{ vehicle.price | intcomma }}円</li>
+            <li class="v_values car_age">{{ vehicle.car_age }}</li>
+            <li class="v_values repair_record">{{ vehicle.repair_record }}</li>
+            <li class="v_values status">{{ vehicle.status }}</li>
+            <li class="cta-container transition"><a href="{% url 'vehicle' vehicle.id %}" class="cta">詳細を見る</a></li>
+        </ul>
+        {% endfor %}
+    {% else %}
+        <p>現在該当する車輌がございません。</p>
+    {% endif %}
+</div>
+    <div class="row">
+            {% include 'partials/_pagenation.html' %}
+    </div>
+</div>
+
+{% endblock %}
